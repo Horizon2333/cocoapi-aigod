@@ -15,7 +15,7 @@ Or you can choose clone the whole project
 ```shell
 git clone https://github.com/Horizon2333/cocoapi-aigod
 cd cocoapi-aigod/aigodpycocotools
-python setup.py build_ext --inplace
+python setup.py develop
 ```
 
 ## Reference
