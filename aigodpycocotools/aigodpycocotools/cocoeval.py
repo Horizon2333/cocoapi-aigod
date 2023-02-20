@@ -590,7 +590,7 @@ class COCOeval:
                                   iouThr=.75,
                                   maxDets=self.params.maxDets[2])
             stats[6] = _summarize(1,
-                                  areaRng='verytiny',
+                                  areaRng='dim',
                                   maxDets=self.params.maxDets[2])
             stats[7] = _summarize(1,
                                   areaRng='tiny',
@@ -610,7 +610,7 @@ class COCOeval:
                                   iouThr=.75,
                                   maxDets=self.params.maxDets[2])
             stats[16] = _summarize(0,
-                                  areaRng='verytiny',
+                                  areaRng='dim',
                                   maxDets=self.params.maxDets[2])
             stats[17] = _summarize(0,
                                    areaRng='tiny',
@@ -695,7 +695,7 @@ class Params:
         self.maxDets = [1, 100, 1500]
         self.areaRng = [[0**2, 1e5**2], [0**2, 8**2], [8**2, 16**2], [16**2, 32**2],
                         [32**2, 1e5**2]]
-        self.areaRngLbl = ['all', 'verytiny', 'tiny', 'small', 'medium']
+        self.areaRngLbl = ['all', 'dim', 'tiny', 'small', 'medium']
         self.useCats = 1
 
     def setKpParams(self):
