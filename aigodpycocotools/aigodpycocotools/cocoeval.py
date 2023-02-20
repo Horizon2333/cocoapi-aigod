@@ -580,63 +580,61 @@ class COCOeval:
             return mean_s
 
         def _summarizeDets():
-            stats = np.zeros((20, ))
+            stats = np.zeros((18, ))
             stats[0] = _summarize(1, maxDets=self.params.maxDets[0])
             stats[1] = _summarize(1, maxDets=self.params.maxDets[1])
             stats[2] = _summarize(1, maxDets=self.params.maxDets[2])
-            stats[3] = _summarize(1, iouThr=.25, maxDets=self.params.maxDets[2])
-            stats[4] = _summarize(1, iouThr=.5, maxDets=self.params.maxDets[2])
-            stats[5] = _summarize(1,
+            stats[3] = _summarize(1, iouThr=.5, maxDets=self.params.maxDets[2])
+            stats[4] = _summarize(1,
                                   iouThr=.75,
+                                  maxDets=self.params.maxDets[2])
+            stats[5] = _summarize(1,
+                                  areaRng='dim',
                                   maxDets=self.params.maxDets[2])
             stats[6] = _summarize(1,
-                                  areaRng='dim',
-                                  maxDets=self.params.maxDets[2])
-            stats[7] = _summarize(1,
                                   areaRng='tiny',
                                   maxDets=self.params.maxDets[2])
-            stats[8] = _summarize(1,
+            stats[7] = _summarize(1,
                                   areaRng='small',
                                   maxDets=self.params.maxDets[2])
-            stats[9] = _summarize(1,
+            stats[8] = _summarize(1,
                                   areaRng='medium',
                                   maxDets=self.params.maxDets[2])
-            stats[10] = _summarize(0, maxDets=self.params.maxDets[0])
-            stats[11] = _summarize(0, maxDets=self.params.maxDets[1])
-            stats[12] = _summarize(0, maxDets=self.params.maxDets[2])
-            stats[13] = _summarize(0, iouThr=.25, maxDets=self.params.maxDets[2])
-            stats[14] = _summarize(0, iouThr=.5, maxDets=self.params.maxDets[2])
-            stats[15] = _summarize(0,
+            stats[9] = _summarize(0, maxDets=self.params.maxDets[0])
+            stats[10] = _summarize(0, maxDets=self.params.maxDets[1])
+            stats[11] = _summarize(0, maxDets=self.params.maxDets[2])
+            stats[12] = _summarize(0, iouThr=.5, maxDets=self.params.maxDets[2])
+            stats[13] = _summarize(0,
                                   iouThr=.75,
                                   maxDets=self.params.maxDets[2])
-            stats[16] = _summarize(0,
+            stats[14] = _summarize(0,
                                   areaRng='dim',
                                   maxDets=self.params.maxDets[2])
-            stats[17] = _summarize(0,
+            stats[15] = _summarize(0,
                                    areaRng='tiny',
                                    maxDets=self.params.maxDets[2])
-            stats[18] = _summarize(0,
+            stats[16] = _summarize(0,
                                    areaRng='small',
                                    maxDets=self.params.maxDets[2])
-            stats[19] = _summarize(0,
+            stats[17] = _summarize(0,
                                    areaRng='medium',
                                    maxDets=self.params.maxDets[2])
-            # stats[20] = _summarize(-1,
+            # stats[18] = _summarize(-1,
             #                        iouThr=.5,
             #                        areaRng='all',
             #                        maxDets=self.params.maxDets[2],
             #                        lrp_type='oLRP')
-            # stats[21] = _summarize(-1,
+            # stats[19] = _summarize(-1,
             #                        iouThr=.5,
             #                        areaRng='all',
             #                        maxDets=self.params.maxDets[2],
             #                        lrp_type='oLRP_Localisation')
-            # stats[22] = _summarize(-1,
+            # stats[20] = _summarize(-1,
             #                        iouThr=.5,
             #                        areaRng='all',
             #                        maxDets=self.params.maxDets[2],
             #                        lrp_type='oLRP_false_positive')
-            # stats[23] = _summarize(-1,
+            # stats[21] = _summarize(-1,
             #                        iouThr=.5,
             #                        areaRng='all',
             #                        maxDets=self.params.maxDets[2],
